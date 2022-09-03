@@ -3,10 +3,10 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('user') ?>">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-code"></i>
+        <div class="sidebar-brand-icon">
+            <img src="<?= base_url('assets/img/logo/logo.png'); ?>" class="img-fluid w-75" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3">Mii Admin</div>
+        <div class="sidebar-brand-text mx-3">SMPN 2 Kajoran</div>
     </a>
 
     <!-- Divider -->

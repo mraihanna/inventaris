@@ -15,7 +15,8 @@
             <ul class="navbar-nav ml-auto">
                 <?php $role_id = $this->session->userdata('role_id'); ?>
                 <?php $result  = $this->db->get_where('user_role', ['id' => $role_id])->row_array(); ?>
-                <?= $result['role']; ?>
+
+                <h4 class="my-auto"><?= $result['role']; ?></h4>
                 <div class="topbar-divider d-none d-sm-block"></div>
 
                 <!-- Nav Item - User Information -->
