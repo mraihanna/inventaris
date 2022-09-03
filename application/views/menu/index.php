@@ -26,8 +26,8 @@
                             <th scope="row"><?= $i; ?></th>
                             <td><?= $m['menu']; ?></td>
                             <td>
-                                <a href="" class="badge badge-success">Edit</a>
-                                <a href="" class="badge badge-danger">Delete</a>
+                                <a href="" class="badge badge-warning" title="EDIT" data-toggle="modal" data-target="#editMenuModal<?= $m['id']; ?>" class="badge badge-success">Edit</a>
+                                <a href="<?= base_url('menu/deletemenu/') . $m['id']; ?>" class="badge badge-danger tombol-hapus-menu">Delete</a>
                             </td>
                         </tr>
                         <?php $i++; ?>
@@ -77,3 +77,32 @@
         </div>
     </div>
 </div>
+
+
+<?php foreach ($menu as $m) : ?>
+    <div class="modal fade" id="editMenuModal<?= $m['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editMenuModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editMenuModalLabel">Edit Menu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="<?= base_url('menu/editmenu/') . $m['id']; ?>" method="POST">
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <!-- <label for="formGroupExampleInput">Example label</label> -->
+                                <input type="text" class="form-control" required id="menu" name="menu" value="<?= $m['menu']; ?>" placeholder="Menu Name">
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>

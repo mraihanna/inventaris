@@ -30,9 +30,27 @@ class Menu extends CI_Controller
             redirect('menu');
         }
     }
-    // public function addMenu()
-    // {
-    // }
+
+    public function editmenu($id)
+    {
+        $this->db->set('menu', $this->input->post('menu'));
+        $this->db->where('id', $id);
+        $this->db->update('user_menu');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu has been changed!</div>');
+        redirect('menu');
+    }
+
+    public function deletemenu($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user_menu');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu has been deleted!</div>');
+        redirect('menu');
+    }
+
+
     public function submenu()
     {
 
@@ -68,5 +86,31 @@ class Menu extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New sub menu added!</div>');
             redirect('menu/submenu');
         }
+    }
+
+    public function editsubmenu($id)
+    {
+        $data = [
+            'menu_id'       => $this->input->post('menu_id'),
+            'title'         => $this->input->post('title'),
+            'url'           => $this->input->post('url'),
+            'icon'          => $this->input->post('icon'),
+            'is_active'     => $this->input->post('is_active')
+        ];
+
+        $this->db->where('id', $id);
+        $this->db->update('user_sub_menu', $data);
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sub Menu has been changed!</div>');
+        redirect('menu/submenu');
+    }
+
+    public function deletesubmenu($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user_sub_menu');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sub Menu has been deleted!</div>');
+        redirect('menu/submenu');
     }
 }
