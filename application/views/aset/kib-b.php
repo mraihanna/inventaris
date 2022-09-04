@@ -2,7 +2,8 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+  <h1 class="h3 text-gray-800"><?= $title; ?></h1>
+  <h4 class="text-gray-800 mb-4">Kartu Inventaris Barang Peralatan dan Mesin</h4>
 
 
   <div class="row">
@@ -14,7 +15,7 @@
       <?php endif; ?>
       <!-- yang atas diguynakan kalau error nya banyak form validationnya banayak -->
       <?= $this->session->flashdata('message'); ?>
-      <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newKibA">Add new KIB A</a>
+      <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newKibA">Add new KIB B</a>
       <!-- Hoverable Rows -->
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -23,19 +24,16 @@
               <th scope="col">#</th>
               <th scope="col">Nomor Aset</th>
               <th scope="col">Nama Barang</th>
-              <th scope="col">Type/Merk</th>
-              <th scope="col">Bahan</th>
-              <th scope="col">Kondisi</th>
-              <th scope="col">Kategori</th>
-              <th scope="col">Ruangan</th>
-              <th scope="col">Sumber Barang</th>
-              <th scope="col">Status</th>
+              <th scope="col">Luas (m<sup>2</sup>)</th>
+              <th scope="col">Tahun</th>
+              <th scope="col">Nomor Sertifikat</th>
+              <th scope="col">Harga</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
             <?php $i = 1; ?>
-            <?php foreach ($kib_a as $a) : ?>
+            <?php foreach ($kib_b as $a) : ?>
               <tr>
                 <th scope="row"><?= $i; ?></th>
                 <td><?= $a['nomor_aset']; ?></td>
@@ -70,12 +68,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newKibALabel">Add New KIB A</h5>
+        <h5 class="modal-title" id="newKibALabel">Add New KIB B</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('aset/kib_a'); ?>" method="POST">
+      <form action="<?= base_url('aset/kib_b'); ?>" method="POST">
         <div class="modal-body">
           <div class="form-group">
             <label for="nomor_aset">Nomor Aset</label>
@@ -85,26 +83,77 @@
             <label for="nama_barang">Nama Barang</label>
             <input type="text" class="form-control" id="nama_barang" name="nama_barang" placeholder="Nama Barang">
           </div>
-          <label for="luas">Luas</label>
-          <div class="row">
-            <div class="form-group col-md-10">
-              <input type="text" class="form-control" id="luas" name="luas" placeholder="Luas">
-            </div>
-            <div class="form-group col-md-2">
-              <label for="luas" class="my-auto">m<sup>2</sup></label>
-            </div>
+          <div class="form-group">
+            <label for="nomor_aset">Type/Merk</label>
+            <input type="text" class="form-control" id="merk" name="merk" placeholder="Merk">
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Bahan</label>
+            <input type="text" class="form-control" id="bahan" name="bahan" placeholder="bahan">
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Kondisi</label>
+            <select class="form-control" name="kondisi" id="kondisi">
+              <option value="">Pilih Kondisi</option>
+              <?php foreach ($kondisi as $k) : ?>
+                <option value="<?= $k['id']; ?>"><?= $k['kondisi']; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Kategori</label>
+            <select class="form-control" name="kategori" id="kategori">
+              <option value="">Pilih Kategori</option>
+              <?php foreach ($kategori as $k) : ?>
+                <option value="<?= $k['id']; ?>"><?= $k['kategori']; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Ruangan</label>
+            <select class="form-control" name="ruangan" id="ruangan">
+              <option value="">Pilih Ruangan</option>
+              <?php foreach ($ruangan as $k) : ?>
+                <option value="<?= $k['id']; ?>"><?= $k['ruangan']; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Tanggal Pengadaan</label>
+            <input type="date" class="form-control" id="tgl" name="tgl" placeholder="Tanggal Pengadaan">
           </div>
           <div class="form-group">
             <label for="nomor_aset">Tahun</label>
             <input type="text" class="form-control" id="tahun" name="tahun" placeholder="Tahun">
           </div>
           <div class="form-group">
-            <label for="nomor_aset">Nomor Sertifikat</label>
-            <input type="text" class="form-control" id="nomor_sertifikat" name="nomor_sertifikat" placeholder="Nomor Sertifikat">
+            <label for="nomor_aset">Umur Ekonomis</label>
+            <input type="text" class="form-control" id="umur_ekonomis" name="umur_ekonomis" placeholder="Umur Ekonomis">
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Jumlah</label>
+            <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Jumlah">
           </div>
           <div class="form-group">
             <label for="nomor_aset">Harga</label>
             <input type="text" class="form-control" id="harga" name="harga" placeholder="Harga">
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Sumber Barang</label>
+            <select class="form-control" name="ruangan" id="ruangan">
+              <option value="">Pilih Sumber Barang</option>
+              <?php foreach ($sumber_barang as $k) : ?>
+                <option value="<?= $k['id']; ?>"><?= $k['sumber_barang']; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Kode Sumber Barang</label>
+            <input type="text" class="form-control" id="kodesumber" name="kodesumber" placeholder="Kode Sumber Barang">
+          </div>
+          <div class="form-group">
+            <label for="nomor_aset">Status Barang</label>
+            <input type="text" class="form-control" id="status_barang" name="status_barang" placeholder="Status Barang">
           </div>
         </div>
         <div class="modal-footer">
@@ -116,7 +165,7 @@
   </div>
 </div>
 
-<?php foreach ($kib_a as $a) : ?>
+<?php foreach ($kib_b as $a) : ?>
   <div class="modal fade" id="editKibA<?= $a['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editKibALabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

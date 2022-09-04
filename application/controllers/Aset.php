@@ -75,9 +75,13 @@ class Aset extends CI_Controller
 
   public function kib_b()
   {
-    $data['title'] = 'KIB A';
-    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    $data['kib_b'] = $this->db->get('kib_b')->result_array();
+    $data['title']          = 'KIB B';
+    $data['user']           = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $data['kib_b']          = $this->db->get('kib_b')->result_array();
+    $data['kondisi']        = $this->db->get('kondisi')->result_array();
+    $data['kategori']       = $this->db->get('kategori')->result_array();
+    $data['ruangan']        = $this->db->get('ruangan')->result_array();
+    $data['sumber_barang']  = $this->db->get('sumber_barang')->result_array();
 
     $this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required');
     $this->form_validation->set_rules('luas', 'Luas', 'required');
