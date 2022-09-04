@@ -11,7 +11,7 @@
             <?= $this->session->flashdata('message');; ?>
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
             <!-- Hoverable Rows -->
-            <table class=" table table-hover">
+            <table class=" table table-hover" id="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

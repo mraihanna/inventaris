@@ -52,6 +52,11 @@
 <script src="<?= base_url('assets/'); ?>sweetalert/sweetalert2.all.min.js"></script>
 <script src="<?= base_url('assets/'); ?>sweetalert/mySweetAlert.js"></script>
 
+<!-- Data Table -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
 <script>
     $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
@@ -73,6 +78,10 @@
                 document.location.href = "<?= base_url('admin/roleaccess/'); ?>" + roleId;
             }
         });
+    });
+
+    $(document).ready(function() {
+        $('#table').DataTable();
     });
 </script>
 
