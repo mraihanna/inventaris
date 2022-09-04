@@ -2,8 +2,7 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 text-gray-800"><?= $title; ?></h1>
-  <h4 class="text-gray-800 mb-4">Kartu Inventaris Barang Tanah</h4>
+  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
 
   <div class="row">
@@ -24,10 +23,13 @@
               <th scope="col">#</th>
               <th scope="col">Nomor Aset</th>
               <th scope="col">Nama Barang</th>
-              <th scope="col">Luas (m<sup>2</sup>)</th>
-              <th scope="col">Tahun</th>
-              <th scope="col">Nomor Sertifikat</th>
-              <th scope="col">Harga</th>
+              <th scope="col">Type/Merk</th>
+              <th scope="col">Bahan</th>
+              <th scope="col">Kondisi</th>
+              <th scope="col">Kategori</th>
+              <th scope="col">Ruangan</th>
+              <th scope="col">Sumber Barang</th>
+              <th scope="col">Status</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
