@@ -54,8 +54,13 @@
 
 <!-- Data Table -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script> -->
 
 <script>
     $('.custom-file-input').on('change', function() {
@@ -81,7 +86,7 @@
     });
 
     $(document).ready(function() {
-        $('#table').DataTable();
+        $('#dataTable').DataTable();
     });
 </script>
 
