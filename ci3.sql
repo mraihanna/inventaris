@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2022 at 12:46 PM
+-- Generation Time: Sep 04, 2022 at 09:34 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -72,6 +72,14 @@ CREATE TABLE `kib_a` (
   `harga` varchar(288) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kib_a`
+--
+
+INSERT INTO `kib_a` (`id`, `nomor_aset`, `nama_barang`, `luas`, `tahun`, `nomor_sertifikat`, `harga`) VALUES
+(1, 'KIB/A/12.01.10.15.08.01/69/2015/00001', 'Tanah Sekolah', 5000, '2015', '16.08.01.02.1.01234', '500000000'),
+(2, 'KIB/A/12.01.10.15.08.01/69/2012/00002', 'Tanah', 500, '2012', '16.08.01.02.1.01234', '1000000');
+
 -- --------------------------------------------------------
 
 --
@@ -80,18 +88,19 @@ CREATE TABLE `kib_a` (
 
 CREATE TABLE `kib_b` (
   `id` int(11) NOT NULL,
+  `id_kondisi` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_ruangan` int(11) NOT NULL,
+  `id_sumber_barang` int(11) NOT NULL,
   `nomor_aset` varchar(288) NOT NULL,
   `nama_barang` varchar(128) NOT NULL,
   `merk` varchar(128) NOT NULL,
   `bahan` varchar(128) NOT NULL,
-  `kondisi` varchar(128) NOT NULL,
-  `kategori` varchar(128) NOT NULL,
-  `ruangan` varchar(120) NOT NULL,
   `tanggal_pengadaan` varchar(120) NOT NULL,
   `tahun` varchar(4) NOT NULL,
+  `umur_ekonomis` varchar(2) NOT NULL,
   `jumlah` varchar(128) NOT NULL,
   `harga` varchar(128) NOT NULL,
-  `id_sumber_barang` int(11) NOT NULL,
   `status_barang` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -168,7 +177,9 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (23, 2, 17),
 (26, 1, 2),
 (28, 1, 22),
-(29, 1, 25);
+(29, 1, 25),
+(30, 1, 26),
+(31, 1, 28);
 
 -- --------------------------------------------------------
 
@@ -189,7 +200,10 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (1, 'Admin'),
 (2, 'User'),
 (3, 'Menu'),
-(25, 'Aset');
+(25, 'Aset'),
+(26, 'Penyusutan'),
+(27, 'Monitoring'),
+(28, 'Setup');
 
 -- --------------------------------------------------------
 
@@ -239,7 +253,13 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (7, 2, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1),
 (40, 25, 'KIB A', 'aset/kib_a', 'fas fa-fw fa-map', 1),
 (41, 25, 'KIB B', 'aset/kib_b', 'fas fa-fw fa-solid fa-cubes', 1),
-(42, 25, 'KIB C', 'aset/kib_c', 'fas fa-fw fa-regular fa-building', 1);
+(42, 25, 'KIB C', 'aset/kib_c', 'fas fa-fw fa-regular fa-building', 1),
+(44, 26, 'Penyusutan', 'penyusutan', 'fas fa-fw fa-solid fa-chart-line', 1),
+(45, 27, 'Monitoring', 'monitoring', 'fas fa-fw fa-solid fa-desktop', 1),
+(46, 28, 'Kondisi', 'setup/kondisi', 'fas fa-fw fa-solid fa-wheelchair', 1),
+(47, 28, 'Kategori', 'setup/kategori', 'fas fa-fw fa-solid fa-filter', 1),
+(48, 28, 'Ruangan', 'setup/ruangna', 'fas fa-fw fa-solid fa-landmark', 1),
+(49, 28, 'Sumber Barang', 'setup/sumber_barang', 'fas fa-fw fa-solid fa-hand-holding-heart', 1);
 
 -- --------------------------------------------------------
 
@@ -339,7 +359,7 @@ ALTER TABLE `icon`
 -- AUTO_INCREMENT for table `kib_a`
 --
 ALTER TABLE `kib_a`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kib_b`
@@ -363,13 +383,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -381,7 +401,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `user_token`
