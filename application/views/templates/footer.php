@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Azumi <?= date('Y'); ?></span>
+            <span>Copyright &copy; SMPN 2 Kajoran <?= date('Y'); ?></span>
         </div>
     </div>
 </footer>
@@ -87,6 +87,10 @@
 
     $(document).ready(function() {
         $('#dataTable').DataTable();
+    });
+
+    $(document).ready(function() {
+        $('#dataTable2').DataTable();
     });
 </script>
 

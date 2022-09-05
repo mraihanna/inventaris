@@ -142,6 +142,24 @@ class Aset extends CI_Controller
         ];
 
         $this->db->insert('kib_b', $data);
+
+        // Penyusutan insert
+        $nilai_residu = intval($this->input->post('harga')) / intval($this->input->post('umur_ekonomis'));
+        $penyusutan   = (intval($this->input->post('harga')) - intval($nilai_residu)) / intval($this->input->post('umur_ekonomis'));
+
+        $tahunSekarang  = date('Y');
+        $pemakaian  =  $tahunSekarang - $tahun;
+
+        $dataPenyusutan = [
+          'nomor_aset'  => $nomor_aset,
+          'nama_aset'   => $this->input->post('nama_barang'),
+          'penyusutan'  => $penyusutan,
+          'pemakaian'   => $pemakaian,
+          'residu'      => $nilai_residu,
+          'aset'        => "B"
+        ];
+
+        $this->db->insert('penyusutan', $dataPenyusutan);
       }
       // die;
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kib B Has been added!</div>');
@@ -228,7 +246,23 @@ class Aset extends CI_Controller
 
       $this->db->insert('kib_c', $data);
 
-      // die;
+      $nilai_residu = intval($this->input->post('harga')) / intval($this->input->post('umur_ekonomis'));
+      $penyusutan   = (intval($this->input->post('harga')) - intval($nilai_residu)) / intval($this->input->post('umur_ekonomis'));
+
+      $tahunSekarang  = date('Y');
+      $pemakaian  =  $tahunSekarang - $this->input->post('tahun');;
+
+      $dataPenyusutan = [
+        'nomor_aset'  => $nomor_aset,
+        'nama_aset'   => $this->input->post('nama_barang'),
+        'penyusutan'  => $penyusutan,
+        'residu'      => $nilai_residu,
+        'pemakaian'   => $pemakaian,
+        'aset'        => "C"
+      ];
+
+      $this->db->insert('penyusutan', $dataPenyusutan);
+
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">KIB C Has been added!</div>');
       redirect('aset/kib_c');
     }
