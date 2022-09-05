@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2022 at 09:34 AM
+-- Generation Time: Sep 05, 2022 at 03:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -59,6 +59,28 @@ INSERT INTO `icon` (`id`, `nama`, `alias`, `class`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `id` int(11) NOT NULL,
+  `kategori` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `kategori`) VALUES
+(1, 'Alat Belajar'),
+(2, 'Alat Elektronik'),
+(3, 'Furniture'),
+(4, 'Alat Informasi'),
+(5, 'Alat Kebersihan');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kib_a`
 --
 
@@ -77,8 +99,8 @@ CREATE TABLE `kib_a` (
 --
 
 INSERT INTO `kib_a` (`id`, `nomor_aset`, `nama_barang`, `luas`, `tahun`, `nomor_sertifikat`, `harga`) VALUES
-(1, 'KIB/A/12.01.10.15.08.01/69/2015/00001', 'Tanah Sekolah', 5000, '2015', '16.08.01.02.1.01234', '500000000'),
-(2, 'KIB/A/12.01.10.15.08.01/69/2012/00002', 'Tanah', 500, '2012', '16.08.01.02.1.01234', '1000000');
+(1, 'KIB/A/12.01.10.15.08.01/69/2015/00001', 'Tanah Sekolah', 10840, '2015', '16.08.01.02.1.01234', '800000000'),
+(2, 'KIB/A/12.01.10.15.08.01/69/2015/00002', 'Tanah Terbangun', 3137, '2015', '16.08.01.02.1.01234', '1300000000');
 
 -- --------------------------------------------------------
 
@@ -96,13 +118,30 @@ CREATE TABLE `kib_b` (
   `nama_barang` varchar(128) NOT NULL,
   `merk` varchar(128) NOT NULL,
   `bahan` varchar(128) NOT NULL,
-  `tanggal_pengadaan` varchar(120) NOT NULL,
+  `tanggal_pengadaan` date NOT NULL,
   `tahun` varchar(4) NOT NULL,
   `umur_ekonomis` varchar(2) NOT NULL,
   `jumlah` varchar(128) NOT NULL,
   `harga` varchar(128) NOT NULL,
-  `status_barang` int(11) NOT NULL
+  `kode_sumber_barang` varchar(255) NOT NULL,
+  `status_barang` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kib_b`
+--
+
+INSERT INTO `kib_b` (`id`, `id_kondisi`, `id_kategori`, `id_ruangan`, `id_sumber_barang`, `nomor_aset`, `nama_barang`, `merk`, `bahan`, `tanggal_pengadaan`, `tahun`, `umur_ekonomis`, `jumlah`, `harga`, `kode_sumber_barang`, `status_barang`) VALUES
+(88, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00001', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(89, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00002', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(90, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00003', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(91, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00004', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(92, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00005', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(93, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00006', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(94, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00007', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(95, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00008', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(96, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00009', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(97, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00010', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-');
 
 -- --------------------------------------------------------
 
@@ -112,14 +151,137 @@ CREATE TABLE `kib_b` (
 
 CREATE TABLE `kib_c` (
   `id` int(11) NOT NULL,
+  `id_kondisi` int(11) NOT NULL,
   `nomor_aset` varchar(128) NOT NULL,
   `nama_barang` varchar(128) NOT NULL,
-  `kondisi` varchar(128) NOT NULL,
   `luas` varchar(128) NOT NULL,
   `lokasi` varchar(288) NOT NULL,
   `tahun` varchar(4) NOT NULL,
-  `harga` varchar(128) NOT NULL
+  `harga` varchar(128) NOT NULL,
+  `umur_ekonomis` varchar(255) NOT NULL,
+  `status_barang` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kib_c`
+--
+
+INSERT INTO `kib_c` (`id`, `id_kondisi`, `nomor_aset`, `nama_barang`, `luas`, `lokasi`, `tahun`, `harga`, `umur_ekonomis`, `status_barang`) VALUES
+(7, 3, 'KIB/C/12.01.10.15.08.01/69/2015/00001', 'Gedung Ruang Kelas', '12 x 7', 'Desa Sutopati, Kec. Kajoran, Kab. Magelang', '2015', '350000000', '20', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kondisi`
+--
+
+CREATE TABLE `kondisi` (
+  `id` int(11) NOT NULL,
+  `kondisi` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kondisi`
+--
+
+INSERT INTO `kondisi` (`id`, `kondisi`) VALUES
+(1, 'Rusak Berat'),
+(2, 'Rusak Ringan'),
+(3, 'Baik'),
+(4, 'Baru');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `monitoring`
+--
+
+CREATE TABLE `monitoring` (
+  `id` int(11) NOT NULL,
+  `nomor_aset` varchar(255) NOT NULL,
+  `nama_barang` varchar(255) NOT NULL,
+  `tahun` varchar(255) NOT NULL,
+  `status_barang` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penyusutan`
+--
+
+CREATE TABLE `penyusutan` (
+  `id` int(11) NOT NULL,
+  `nomor_aset` varchar(255) NOT NULL,
+  `nama_aset` varchar(255) NOT NULL,
+  `residu` varchar(128) NOT NULL,
+  `penyusutan` varchar(255) NOT NULL,
+  `pemakaian` varchar(255) NOT NULL,
+  `aset` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `penyusutan`
+--
+
+INSERT INTO `penyusutan` (`id`, `nomor_aset`, `nama_aset`, `residu`, `penyusutan`, `pemakaian`, `aset`) VALUES
+(19, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00001', 'Meja', '37500', '32812.5', '5', 'B'),
+(20, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00002', 'Meja', '37500', '32812.5', '5', 'B'),
+(21, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00003', 'Meja', '37500', '32812.5', '5', 'B'),
+(22, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00004', 'Meja', '37500', '32812.5', '5', 'B'),
+(23, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00005', 'Meja', '37500', '32812.5', '5', 'B'),
+(24, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00006', 'Meja', '37500', '32812.5', '5', 'B'),
+(25, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00007', 'Meja', '37500', '32812.5', '5', 'B'),
+(26, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00008', 'Meja', '37500', '32812.5', '5', 'B'),
+(27, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00009', 'Meja', '37500', '32812.5', '5', 'B'),
+(28, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00010', 'Meja', '37500', '32812.5', '5', 'B'),
+(30, 'KIB/C/12.01.10.15.08.01/69/2015/00001', 'Gedung Ruang Kelas', '17500000', '16625000', '7', 'C');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ruangan`
+--
+
+CREATE TABLE `ruangan` (
+  `id` int(11) NOT NULL,
+  `ruangan` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ruangan`
+--
+
+INSERT INTO `ruangan` (`id`, `ruangan`) VALUES
+(1, 'Ruang Kelas VII'),
+(3, 'Ruang UKS'),
+(4, 'Ruang Kantor'),
+(5, 'Lab Komputer'),
+(6, 'Ruang Guru'),
+(7, 'Ruang Kelas VIII'),
+(8, 'Ruang Kelas IX');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sumber_barang`
+--
+
+CREATE TABLE `sumber_barang` (
+  `id` int(11) NOT NULL,
+  `sumber_barang` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sumber_barang`
+--
+
+INSERT INTO `sumber_barang` (`id`, `sumber_barang`) VALUES
+(1, 'BOS'),
+(2, 'DAK'),
+(3, 'APBD'),
+(4, 'HIBAH'),
+(5, 'Life Skill');
 
 -- --------------------------------------------------------
 
@@ -179,7 +341,8 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (28, 1, 22),
 (29, 1, 25),
 (30, 1, 26),
-(31, 1, 28);
+(31, 1, 28),
+(32, 1, 27);
 
 -- --------------------------------------------------------
 
@@ -258,7 +421,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (45, 27, 'Monitoring', 'monitoring', 'fas fa-fw fa-solid fa-desktop', 1),
 (46, 28, 'Kondisi', 'setup/kondisi', 'fas fa-fw fa-solid fa-wheelchair', 1),
 (47, 28, 'Kategori', 'setup/kategori', 'fas fa-fw fa-solid fa-filter', 1),
-(48, 28, 'Ruangan', 'setup/ruangna', 'fas fa-fw fa-solid fa-landmark', 1),
+(48, 28, 'Ruangan', 'setup/ruangan', 'fas fa-fw fa-solid fa-landmark', 1),
 (49, 28, 'Sumber Barang', 'setup/sumber_barang', 'fas fa-fw fa-solid fa-hand-holding-heart', 1);
 
 -- --------------------------------------------------------
@@ -292,6 +455,12 @@ ALTER TABLE `icon`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `kib_a`
 --
 ALTER TABLE `kib_a`
@@ -307,6 +476,36 @@ ALTER TABLE `kib_b`
 -- Indexes for table `kib_c`
 --
 ALTER TABLE `kib_c`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kondisi`
+--
+ALTER TABLE `kondisi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `monitoring`
+--
+ALTER TABLE `monitoring`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `penyusutan`
+--
+ALTER TABLE `penyusutan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ruangan`
+--
+ALTER TABLE `ruangan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sumber_barang`
+--
+ALTER TABLE `sumber_barang`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -356,6 +555,12 @@ ALTER TABLE `icon`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `kib_a`
 --
 ALTER TABLE `kib_a`
@@ -365,13 +570,43 @@ ALTER TABLE `kib_a`
 -- AUTO_INCREMENT for table `kib_b`
 --
 ALTER TABLE `kib_b`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `kib_c`
 --
 ALTER TABLE `kib_c`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `kondisi`
+--
+ALTER TABLE `kondisi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `monitoring`
+--
+ALTER TABLE `monitoring`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `penyusutan`
+--
+ALTER TABLE `penyusutan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `ruangan`
+--
+ALTER TABLE `ruangan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `sumber_barang`
+--
+ALTER TABLE `sumber_barang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -383,7 +618,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
