@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $title; ?> | SMPN 2 KAJORAN</title>
+    <title><?= $title; ?> | APLIKASI INVENTARIS SMPN 2 KAJORAN</title>
     <link rel="shortcut icon" href="<?= base_url('assets/img/logo/logo.png'); ?>" type="image">
 
     <!-- Custom fonts for this template-->

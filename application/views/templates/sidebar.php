@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
             <img src="<?= base_url('assets/img/logo/logo.png'); ?>" class="img-fluid w-75" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3">SMPN 2 Kajoran</div>
+        <div class="sidebar-brand-text mx-3">APLIKASI INVENTARIS JORANDA</div>
     </a>
 
     <!-- Divider -->

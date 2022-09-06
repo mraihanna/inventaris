@@ -28,7 +28,6 @@
               <th scope="col">Sumber Barang</th>
               <th scope="col">Kode Sumber Barang</th>
               <th scope="col">Status Barang</th>
-              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -63,9 +62,6 @@
                 <?php else : ?>
                   <td><?= $a['status_barang']; ?></td>
                 <?php endif; ?>
-                <td>
-                  <a href="" class="badge badge-warning" title="EDIT" data-toggle="modal" data-target="#editKibB<?= $a['id']; ?>">Edit</a>
-                </td>
               </tr>
               <?php $i++; ?>
             <?php endforeach; ?>
@@ -95,7 +91,6 @@
               <th scope="col">Umur Ekonomis</th>
               <th scope="col">Harga</th>
               <th scope="col">Status Barang</th>
-              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -119,9 +114,6 @@
                 <?php else : ?>
                   <td><?= $a['status_barang']; ?></td>
                 <?php endif; ?>
-                <td>
-                  <a href="" class="badge badge-warning" title="EDIT" data-toggle="modal" data-target="#editKibC<?= $a['id']; ?>">Edit</a>
-                </td>
               </tr>
               <?php $i++; ?>
             <?php endforeach; ?>

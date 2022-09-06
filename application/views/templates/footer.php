@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; SMPN 2 Kajoran <?= date('Y'); ?></span>
+            <span>Copyright &copy; APLIKASI INVENTARIS SMPN 2 KAJORAN <?= date('Y'); ?></span>
         </div>
     </div>
 </footer>

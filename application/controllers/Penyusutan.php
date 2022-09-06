@@ -6,6 +6,7 @@ class Penyusutan extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+    is_logged_in();
     $this->load->library('form_validation');
   }
 
@@ -31,15 +32,18 @@ class Penyusutan extends CI_Controller
     $data['title'] = "Penyusutan";
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['penyusutan'] = $this->db->get_where('penyusutan', ['id' => $id])->row_array();
-    $queryKibB = "SELECT a.*, b.tahun, b.harga, b.umur_ekonomis FROM penyusutan a JOIN kib_b b ON a.nomor_aset = b.nomor_aset ";
-    $data['kib_b'] = $this->db->query($queryKibB)->result_array();
-    $queryKibC = "SELECT a.*, b.tahun, b.harga, b.umur_ekonomis FROM penyusutan a JOIN kib_c b ON a.nomor_aset = b.nomor_aset ";
-    $data['kib_c'] = $this->db->query($queryKibC)->result_array();
+    if ($data['penyusutan']['aset'] == "B") {
+      $queryKibB = "SELECT a.*, b.* FROM penyusutan a JOIN kib_b b ON a.nomor_aset = b.nomor_aset where a.id = $id";
+      $data['kib'] = $this->db->query($queryKibB)->row_array();
+    } else {
+      $queryKibC = "SELECT a.*, b.* FROM penyusutan a JOIN kib_c b ON a.nomor_aset = b.nomor_aset where a.id = $id";
+      $data['kib'] = $this->db->query($queryKibC)->row_array();
+    }
 
     $this->load->view('templates/header', $data);
     $this->load->view('templates/sidebar', $data);
     $this->load->view('templates/topbar', $data);
-    $this->load->view('penyusutan/index', $data);
+    $this->load->view('penyusutan/detail', $data);
     $this->load->view('templates/footer');
   }
 }

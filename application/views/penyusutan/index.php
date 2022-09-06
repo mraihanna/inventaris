@@ -39,7 +39,7 @@
                 <td>Rp. <?= number_format($a['residu']); ?></td>
                 <td>Rp. <?= number_format($a['penyusutan']); ?></td>
                 <td>
-                  <a href="<?= base_url('penyusutan/detail'); ?>" class="badge badge-warning" title="Detail">Detail</a>
+                  <a href="<?= base_url('penyusutan/detail/') . $a['id']; ?>" class="badge badge-warning" title="Detail">Detail</a>
                 </td>
               </tr>
               <?php $i++; ?>
@@ -86,7 +86,7 @@
                 <td>Rp. <?= number_format($a['residu']); ?></td>
                 <td>Rp. <?= number_format($a['penyusutan']); ?></td>
                 <td>
-                  <a href="<?= base_url('penyusutan/detail'); ?>" class="badge badge-warning" title="Detail">Detail</a>
+                  <a href="<?= base_url('penyusutan/detail/') . $a['id']; ?>" class="badge badge-warning" title="Detail">Detail</a>
                 </td>
               </tr>
               <?php $i++; ?>
