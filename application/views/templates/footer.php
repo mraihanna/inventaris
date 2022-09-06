@@ -59,10 +59,63 @@
 <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+<!-- Page level plugins -->
+<script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<!-- <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
+<script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script> -->
+
 <!-- <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script> -->
 
+<?php $rowA = $this->db->get('kib_a')->num_rows(); ?>
+<?php $rowB = $this->db->get('kib_b')->num_rows(); ?>
+<?php $rowC = $this->db->get('kib_c')->num_rows(); ?>
+<?php $rowUser = $this->db->get('user')->num_rows(); ?>
+
 <script>
+    // Set new default font family and font color to mimic Bootstrap's default styling
+    Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+    Chart.defaults.global.defaultFontColor = '#858796';
+
+    var rowA = "<?= $rowA ?>";
+    var rowB = "<?= $rowB ?>";
+    var rowC = "<?= $rowC ?>";
+    // Pie Chart Example
+    var ctx = document.getElementById("myPieChart");
+    var myPieChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["KIB A", "KIB B", "KIB C"],
+            datasets: [{
+                data: [rowA, rowB, rowC],
+                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                caretPadding: 10,
+            },
+            legend: {
+                display: false
+            },
+            cutoutPercentage: 80,
+        },
+    });
+
+
+
     $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);

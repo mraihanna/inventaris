@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2022 at 03:38 AM
+-- Generation Time: Sep 06, 2022 at 04:30 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -132,7 +132,7 @@ CREATE TABLE `kib_b` (
 --
 
 INSERT INTO `kib_b` (`id`, `id_kondisi`, `id_kategori`, `id_ruangan`, `id_sumber_barang`, `nomor_aset`, `nama_barang`, `merk`, `bahan`, `tanggal_pengadaan`, `tahun`, `umur_ekonomis`, `jumlah`, `harga`, `kode_sumber_barang`, `status_barang`) VALUES
-(88, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00001', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(88, 1, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00001', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', 'Deadstock/Tidak Bisa diperbaiki'),
 (89, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00002', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
 (90, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00003', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
 (91, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00004', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
@@ -141,7 +141,20 @@ INSERT INTO `kib_b` (`id`, `id_kondisi`, `id_kategori`, `id_ruangan`, `id_sumber
 (94, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00007', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
 (95, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00008', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
 (96, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00009', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
-(97, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00010', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-');
+(97, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00010', 'Meja', '-', 'Kayu', '2017-09-16', '2017', '8', '10', '300000', 'BOS/2017', '-'),
+(98, 2, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00011', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', 'Bisa Diperbaiki/Direnovasi'),
+(99, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00012', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(100, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00013', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(101, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00014', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(102, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00015', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(103, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00016', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(104, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00017', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(105, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00018', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(106, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00019', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(107, 3, 3, 1, 1, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00020', 'Kursi', '-', 'Kayu', '2015-09-09', '2015', '8', '10', '500000', 'BOS/2015', '-'),
+(108, 3, 1, 1, 3, 'KIB/B/12.01.10.15.08.01/69/1/1/2015/00021', 'Papan Tulis`', '-', 'Kayu', '2015-12-20', '2015', '8', '2', '700000', 'APBD/2015', '-'),
+(109, 3, 1, 7, 3, 'KIB/B/12.01.10.15.08.01/69/7/1/2015/00022', 'Papan Tulis`', '-', 'Kayu', '2015-12-20', '2015', '8', '2', '700000', 'APBD/2015', '-'),
+(110, 3, 2, 5, 1, 'KIB/B/12.01.10.15.08.01/69/2/5/2016/00023', 'Laptop', 'Asus', 'Mesin', '2016-12-27', '2016', '5', '1', '12000000', 'BOS/2016', '-');
 
 -- --------------------------------------------------------
 
@@ -167,7 +180,9 @@ CREATE TABLE `kib_c` (
 --
 
 INSERT INTO `kib_c` (`id`, `id_kondisi`, `nomor_aset`, `nama_barang`, `luas`, `lokasi`, `tahun`, `harga`, `umur_ekonomis`, `status_barang`) VALUES
-(7, 3, 'KIB/C/12.01.10.15.08.01/69/2015/00001', 'Gedung Ruang Kelas', '12 x 7', 'Desa Sutopati, Kec. Kajoran, Kab. Magelang', '2015', '350000000', '20', '-');
+(7, 3, 'KIB/C/12.01.10.15.08.01/69/2015/00001', 'Gedung Ruang Kelas', '12 x 7', 'Desa Sutopati, Kec. Kajoran, Kab. Magelang', '2015', '350000000', '20', '-'),
+(8, 3, 'KIB/C/12.01.10.15.08.01/69/2015/00002', 'Gedung Ruang Guru', '10 x 10', 'Desa Sutopati, Kec. Kajoran, Kab. Magelang', '2015', '300000000', '20', '-'),
+(9, 1, 'KIB/C/12.01.10.15.08.01/69/2015/00003', 'Gedung Kesenian', '7 x 7', 'Desa Sutopati, Kec. Kajoran, Kab. Magelang', '2015', '200000000', '20', 'Perlu Renovasi Besar');
 
 -- --------------------------------------------------------
 
@@ -235,7 +250,22 @@ INSERT INTO `penyusutan` (`id`, `nomor_aset`, `nama_aset`, `residu`, `penyusutan
 (26, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00008', 'Meja', '37500', '32812.5', '5', 'B'),
 (27, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00009', 'Meja', '37500', '32812.5', '5', 'B'),
 (28, 'KIB/B/12.01.10.15.08.01/69/3/1/2017/00010', 'Meja', '37500', '32812.5', '5', 'B'),
-(30, 'KIB/C/12.01.10.15.08.01/69/2015/00001', 'Gedung Ruang Kelas', '17500000', '16625000', '7', 'C');
+(30, 'KIB/C/12.01.10.15.08.01/69/2015/00001', 'Gedung Ruang Kelas', '17500000', '16625000', '7', 'C'),
+(31, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00011', 'Kursi', '62500', '54687.5', '7', 'B'),
+(32, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00012', 'Kursi', '62500', '54687.5', '7', 'B'),
+(33, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00013', 'Kursi', '62500', '54687.5', '7', 'B'),
+(34, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00014', 'Kursi', '62500', '54687.5', '7', 'B'),
+(35, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00015', 'Kursi', '62500', '54687.5', '7', 'B'),
+(36, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00016', 'Kursi', '62500', '54687.5', '7', 'B'),
+(37, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00017', 'Kursi', '62500', '54687.5', '7', 'B'),
+(38, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00018', 'Kursi', '62500', '54687.5', '7', 'B'),
+(39, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00019', 'Kursi', '62500', '54687.5', '7', 'B'),
+(40, 'KIB/B/12.01.10.15.08.01/69/3/1/2015/00020', 'Kursi', '62500', '54687.5', '7', 'B'),
+(41, 'KIB/B/12.01.10.15.08.01/69/1/1/2015/00021', 'Papan Tulis`', '87500', '76562.5', '7', 'B'),
+(42, 'KIB/B/12.01.10.15.08.01/69/1/1/2015/00022', 'Papan Tulis`', '87500', '76562.5', '7', 'B'),
+(43, 'KIB/C/12.01.10.15.08.01/69/2015/00002', 'Gedung Ruang Guru', '15000000', '14250000', '7', 'C'),
+(44, 'KIB/C/12.01.10.15.08.01/69/2015/00003', 'Gedung Kesenian', '10000000', '9500000', '7', 'C'),
+(45, 'KIB/B/12.01.10.15.08.01/69/2/5/2016/00023', 'Laptop', '2400000', '1920000', '6', 'B');
 
 -- --------------------------------------------------------
 
@@ -305,7 +335,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `role_id`, `name`, `email`, `image`, `password`, `is_active`, `date_created`) VALUES
-(1, 1, 'admin', 'inventarisbarangsmpn2kjr@gmail.com', 'default.jpg', '$2y$10$/kWYLS5hsgeJkB/NhJzC7eIBKZ33242R.3Z31a7/pKdBdpFUZ/xGC', 1, 1637984685),
+(1, 1, 'admin', 'inventarisbarangsmpn2kjr@gmail.com', 'admin.jpeg', '$2y$10$/kWYLS5hsgeJkB/NhJzC7eIBKZ33242R.3Z31a7/pKdBdpFUZ/xGC', 1, 1637984685),
 (48, 2, 'Mahfud Fauzi', 'fmahfud015@gmail.com', 'default.jpg', '$2y$10$MyETuSGu1YXKZMsE2sZ4qukuz4un9HjACnoUTaIsjzFZF/2lLJKVK', 1, 1662195502),
 (49, 2, 'Kepala Sekolah', 'kepalasekolahsmpn2kjr@gmail.com', 'default.jpg', '$2y$10$Ukx5qPZT2sZ3rVHom8NnwuFKLumhnOOUZk6orBHWNXiciTDzLwoZa', 1, 1662195871);
 
@@ -342,7 +372,10 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (29, 1, 25),
 (30, 1, 26),
 (31, 1, 28),
-(32, 1, 27);
+(32, 1, 27),
+(33, 2, 27),
+(34, 2, 26),
+(35, 2, 25);
 
 -- --------------------------------------------------------
 
@@ -570,13 +603,13 @@ ALTER TABLE `kib_a`
 -- AUTO_INCREMENT for table `kib_b`
 --
 ALTER TABLE `kib_b`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `kib_c`
 --
 ALTER TABLE `kib_c`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `kondisi`
@@ -594,7 +627,7 @@ ALTER TABLE `monitoring`
 -- AUTO_INCREMENT for table `penyusutan`
 --
 ALTER TABLE `penyusutan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `ruangan`
@@ -618,7 +651,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
