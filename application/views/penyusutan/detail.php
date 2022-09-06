@@ -120,7 +120,8 @@
                 <td align="right">Rp. <?= number_format($kib['harga']); ?></td>
               </tr>
               <?php $no = 1; ?>
-              <?php for ($i = 0; $i < $kib['pemakaian']; $i++) : ?>
+              <?php $length = $kib['pemakaian'] + 1; ?>
+              <?php for ($i = 0; $i < $length; $i++) : ?>
                 <?php
                 $tgl1       = $kib['tanggal_pengadaan'];
                 $tgl2       = date('Y', strtotime('+' . $i . ' year', strtotime($tgl1)));
@@ -235,7 +236,8 @@
                 <td align="right">Rp. <?= number_format($kib['harga']); ?></td>
               </tr>
               <?php $no = 1; ?>
-              <?php for ($i = 0; $i < $kib['pemakaian']; $i++) : ?>
+              <?php $length = $kib['pemakaian'] + 1; ?>
+              <?php for ($i = 0; $i < $length; $i++) : ?>
                 <?php
                 $tgl1       = "01-01-" . $kib['tahun'];
                 $tgl2       = date('Y', strtotime('+' . $i . ' year', strtotime($tgl1)));

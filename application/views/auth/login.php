@@ -22,7 +22,8 @@
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Halaman Login</h1>
+                                    <img src="<?= base_url('assets/img/logo/logo.png'); ?>" class="img-fluid w-25 mb-4" alt="">
+                                    <h1 class="h4 text-gray-900 mb-4">Aplikasi Inventaris SMPN 2 Kajoran</h1>
                                 </div>
                                 <?= $this->session->flashdata('message'); ?>
                                 <form class="user" method="POST" action="<?= base_url('auth/'); ?>">

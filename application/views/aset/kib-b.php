@@ -15,7 +15,9 @@
       <?php endif; ?>
       <!-- yang atas diguynakan kalau error nya banyak form validationnya banayak -->
       <?= $this->session->flashdata('message'); ?>
-      <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newKibB">Add new KIB B</a>
+      <?php if ($user['role_id'] == 1) : ?>
+        <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newKibB">Add new KIB B</a>
+      <?php endif; ?>
       <!-- Hoverable Rows -->
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -36,7 +38,9 @@
               <th scope="col">Sumber Barang</th>
               <th scope="col">Kode Sumber Barang</th>
               <th scope="col">Status Barang</th>
-              <th scope="col">Action</th>
+              <?php if ($user['role_id'] == 1) : ?>
+                <th scope="col">Action</th>
+              <?php endif; ?>
             </tr>
           </thead>
           <tbody>
@@ -71,9 +75,11 @@
                 <?php else : ?>
                   <td><?= $a['status_barang']; ?></td>
                 <?php endif; ?>
-                <td>
-                  <a href="" class="badge badge-warning" title="EDIT" data-toggle="modal" data-target="#editKibB<?= $a['id']; ?>">Edit</a>
-                </td>
+                <?php if ($user['role_id'] == 1) : ?>
+                  <td>
+                    <a href="" class="badge badge-warning" title="EDIT" data-toggle="modal" data-target="#editKibB<?= $a['id']; ?>">Edit</a>
+                  </td>
+                <?php endif; ?>
               </tr>
               <?php $i++; ?>
             <?php endforeach; ?>
